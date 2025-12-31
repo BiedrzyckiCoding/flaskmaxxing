@@ -1,0 +1,115 @@
+/* Color Variables */
+:root {
+    --navy: #0A192F;
+    --cream: #F5F5F0;
+    --white: #FFFFFF;
+    --gold: #D4AF37;
+    --gold-hover: #E5C100;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--navy);
+    font-family: 'Georgia', serif;
+    /* Editorial feel */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--navy);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .brand {
+    color: var(--gold);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* Layout */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1,
+h2 {
+    color: var(--navy);
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Buttons */
+.btn-main {
+    background-color: var(--navy);
+    color: var(--gold);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background-color: var(--gold);
+    color: var(--navy);
+}
+
+/* News Cards */
+.news-item {
+    background-color: var(--white);
+    border-left: 5px solid var(--navy);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: #666;
+    font-family: sans-serif;
+}
+
+/* Video Placeholder */
+.video-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-weight: bold;
+    border: 2px dashed var(--navy);
+    margin-top: 20px;
+}

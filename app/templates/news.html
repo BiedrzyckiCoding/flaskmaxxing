@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Weekly News</h1>
+    
+    {% for item in news %}
+        <div class="news-item">
+            <h2>{{ item.title }}</h2>
+            <div class="meta">{{ item.date }}</div>
+            <p>{{ item.summary }}</p>
+            <a href="{{ item.url }}" style="color: var(--navy); font-weight: bold;">Read Full Story &rarr;</a>
+        </div>
+    {% endfor %}
+
+{% endblock %}
