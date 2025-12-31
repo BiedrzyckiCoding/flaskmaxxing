@@ -113,3 +113,219 @@ h2 {
     border: 2px dashed var(--navy);
     margin-top: 20px;
 }
+
+/* Basic reset for cleaner styling */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    /* Light gray background to show off the white nav */
+}
+
+nav {
+    /* 1. Center the nav bar */
+    width: 90%;
+    /* Occupy 90% of screen width */
+    max-width: 1200px;
+    /* Stop it from getting too wide on huge screens */
+    margin: 0 auto;
+    /* Centers the element horizontally */
+
+    /* 2. Make it larger (higher) */
+    padding: 1.5rem 3rem;
+    /* Top/Bottom padding increases height */
+
+    /* 3. Make the navbar bottom corners rounded */
+    /* format: top-left | top-right | bottom-right | bottom-left */
+    border-radius: 0 0 25px 25px;
+
+    /* Layout & Colors */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0A192F;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Space between links */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+nav {
+    /* Layout & Geometry */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Centers the navbar */
+    padding: 1.5rem 3rem;
+    /* Height/Spacing */
+
+    /* Appearance */
+    border-radius: 0 0 25px 25px;
+    /* Rounded bottom corners */
+
+    /* background-color: #ffffff; <--- Removed this so it stays the "color it has been" */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Brand styling (optional, ensuring it matches the scale) */
+.brand {
+    font-size: 1.8rem;
+    /* Made slightly larger to match new menu size */
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Targeted Font Size Increase */
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.25rem;
+    /* Increased font size for links */
+}
+
+/* Subscribe Button Styling */
+.btn-subscribe {
+    background-color: #007BFF;
+    color: white !important;
+    padding: 12px 28px;
+    /* Increased padding slightly to match larger font */
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-subscribe:hover {
+    background-color: #0056b3;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+
+    /* Ensures the background covers the whole screen height */
+    min-height: 100vh;
+
+    /* Direction: 135deg (Top-Left to Bottom-Right)
+       Colors: Very light warm white to a soft cool gray 
+    */
+    background: linear-gradient(135deg, #fdfbfb 0%, #72b7d9 100%);
+
+    /* Optional: Fixes background in place when scrolling */
+    background-attachment: fixed;
+}
+
+/* --- ABOUT PAGE SPECIFIC STYLES --- */
+
+/* Center everything and add breathing room */
+.about-hero {
+    text-align: center;
+    max-width: 700px;
+    margin: 80px auto;
+    /* pushes it down from the nav */
+    padding: 0 20px;
+}
+
+/* The Main Headline: "The internet is a firehose..." */
+.about-hero h1 {
+    font-size: 3.5rem;
+    /* Huge text */
+    font-family: 'Georgia', serif;
+    color: var(--navy);
+    line-height: 1.1;
+    border-bottom: none;
+    /* Removing the standard border to look cleaner */
+    margin-bottom: 0.5rem;
+}
+
+/* The Punchline: "We turn it off." */
+.about-hero .punchline {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--gold);
+    /* Uses your gold variable for pop */
+    font-family: sans-serif;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    display: block;
+    /* Forces it to its own line */
+}
+
+/* The Body Text */
+.about-hero p {
+    font-size: 1.25rem;
+    color: var(--navy);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-family: 'Georgia', serif;
+}
+
+/* The Final Tagline: "Fast. Simple. Essential." */
+.about-hero .tagline {
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    /* Spaced out letters look premium */
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: inline-block;
+    border-bottom: 2px solid var(--gold);
+    /* Subtle underline */
+    padding-bottom: 5px;
+}
+
+/* Styling the video box to look nicer */
+.video-placeholder {
+    width: 100%;
+    max-width: 100%;
+    height: 350px;
+    background-color: var(--white);
+    border: 1px solid rgba(10, 25, 47, 0.1);
+    /* Subtle border */
+    border-radius: 12px;
+    /* Soft corners */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    /* Lifts it off the page */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    font-weight: bold;
+    margin-top: 40px;
+}
