@@ -1,176 +1,38 @@
-/* Color Variables */
+/* 1. VARIABLES */
 :root {
     --navy: #0A192F;
     --cream: #F5F5F0;
     --white: #FFFFFF;
     --gold: #D4AF37;
     --gold-hover: #E5C100;
+    --link-blue: #007BFF;
+    --link-hover: #0056b3;
+}
+
+/* 2. GLOBAL RESET */
+/* This is crucial for responsiveness: prevents padding from breaking layouts */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--cream);
-    color: var(--navy);
+    margin: 0;
+    padding: 0;
     font-family: 'Georgia', serif;
-    /* Editorial feel */
-    margin: 0;
-    padding: 0;
+    /* Editorial feel for main text */
     line-height: 1.6;
-}
-
-/* Navigation */
-nav {
-    background-color: var(--navy);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav .brand {
-    color: var(--gold);
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    letter-spacing: 1px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    color: var(--cream);
-    text-decoration: none;
-    font-family: sans-serif;
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: var(--gold);
-}
-
-/* Layout */
-.container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-h1,
-h2 {
     color: var(--navy);
-    border-bottom: 2px solid var(--gold);
-    display: inline-block;
-    padding-bottom: 5px;
+    min-height: 100vh;
+    /* Gradient Background */
+    background: linear-gradient(135deg, #fdfbfb 0%, #72b7d9 100%);
+    background-attachment: fixed;
+    /* Keeps background static while scrolling */
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Buttons */
-.btn-main {
-    background-color: var(--navy);
-    color: var(--gold);
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 10px;
-    transition: 0.3s;
-}
-
-.btn-main:hover {
-    background-color: var(--gold);
-    color: var(--navy);
-}
-
-/* News Cards */
-.news-item {
-    background-color: var(--white);
-    border-left: 5px solid var(--navy);
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.meta {
-    font-size: 0.85rem;
-    color: #666;
-    font-family: sans-serif;
-}
-
-/* Video Placeholder */
-.video-placeholder {
-    width: 100%;
-    height: 300px;
-    background-color: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #555;
-    font-weight: bold;
-    border: 2px dashed var(--navy);
-    margin-top: 20px;
-}
-
-/* Basic reset for cleaner styling */
-body {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: #f4f4f4;
-    /* Light gray background to show off the white nav */
-}
-
-nav {
-    /* 1. Center the nav bar */
-    width: 90%;
-    /* Occupy 90% of screen width */
-    max-width: 1200px;
-    /* Stop it from getting too wide on huge screens */
-    margin: 0 auto;
-    /* Centers the element horizontally */
-
-    /* 2. Make it larger (higher) */
-    padding: 1.5rem 3rem;
-    /* Top/Bottom padding increases height */
-
-    /* 3. Make the navbar bottom corners rounded */
-    /* format: top-left | top-right | bottom-right | bottom-left */
-    border-radius: 0 0 25px 25px;
-
-    /* Layout & Colors */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0A192F;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* Soft shadow for depth */
-}
-
-.brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    /* Space between links */
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-}
-
+/* 3. NAVIGATION */
 nav {
     /* Layout & Geometry */
     width: 90%;
@@ -178,154 +40,212 @@ nav {
     margin: 0 auto;
     /* Centers the navbar */
     padding: 1.5rem 3rem;
-    /* Height/Spacing */
 
     /* Appearance */
+    background-color: var(--navy);
     border-radius: 0 0 25px 25px;
     /* Rounded bottom corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
-    /* background-color: #ffffff; <--- Removed this so it stays the "color it has been" */
-
+    /* Flexbox Alignment */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    /* Stick to top on scroll */
+    top: 0;
+    z-index: 1000;
 }
 
-/* Brand styling (optional, ensuring it matches the scale) */
-.brand {
+nav .brand {
     font-size: 1.8rem;
-    /* Made slightly larger to match new menu size */
     font-weight: bold;
     text-decoration: none;
-    color: #333;
+    color: var(--gold);
+    /* Changed to Gold to pop against Navy */
+    letter-spacing: 1px;
 }
 
 nav ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     gap: 25px;
-    margin: 0;
-    padding: 0;
 }
 
-/* Targeted Font Size Increase */
 nav ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--cream);
+    font-family: sans-serif;
     font-weight: 500;
-    font-size: 1.25rem;
-    /* Increased font size for links */
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
-/* Subscribe Button Styling */
+nav ul li a:hover {
+    color: var(--gold);
+}
+
+/* Subscribe Button */
 .btn-subscribe {
-    background-color: #007BFF;
-    color: white !important;
-    padding: 12px 28px;
-    /* Increased padding slightly to match larger font */
+    background-color: var(--link-blue);
+    color: var(--white) !important;
+    /* Force white text */
+    padding: 10px 24px;
     border-radius: 50px;
     transition: background-color 0.3s ease;
 }
 
 .btn-subscribe:hover {
-    background-color: #0056b3;
+    background-color: var(--link-hover);
+    color: var(--white);
 }
 
-body {
-    margin: 0;
+/* 4. MAIN LAYOUT */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0;
+    /* Padding handled by width % */
+}
+
+/* 5. NEWS CARDS & ELEMENTS */
+.news-item {
+    background-color: var(--white);
+    border-left: 5px solid var(--navy);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.news-item:hover {
+    transform: translateY(-3px);
+    /* Subtle lift on hover */
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: #666;
     font-family: sans-serif;
-
-    /* Ensures the background covers the whole screen height */
-    min-height: 100vh;
-
-    /* Direction: 135deg (Top-Left to Bottom-Right)
-       Colors: Very light warm white to a soft cool gray 
-    */
-    background: linear-gradient(135deg, #fdfbfb 0%, #72b7d9 100%);
-
-    /* Optional: Fixes background in place when scrolling */
-    background-attachment: fixed;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
-/* --- ABOUT PAGE SPECIFIC STYLES --- */
+h1,
+h2 {
+    color: var(--navy);
+    line-height: 1.2;
+}
 
-/* Center everything and add breathing room */
+/* 6. ABOUT PAGE HERO (Responsive Text) */
 .about-hero {
     text-align: center;
     max-width: 700px;
     margin: 80px auto;
-    /* pushes it down from the nav */
     padding: 0 20px;
 }
 
-/* The Main Headline: "The internet is a firehose..." */
 .about-hero h1 {
-    font-size: 3.5rem;
-    /* Huge text */
-    font-family: 'Georgia', serif;
+    /* Clamps: Min 2.5rem, Ideal 5vw, Max 4rem */
+    font-size: clamp(2.5rem, 5vw, 4rem);
     color: var(--navy);
     line-height: 1.1;
-    border-bottom: none;
-    /* Removing the standard border to look cleaner */
     margin-bottom: 0.5rem;
 }
 
-/* The Punchline: "We turn it off." */
 .about-hero .punchline {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
     font-weight: bold;
     color: var(--gold);
-    /* Uses your gold variable for pop */
     font-family: sans-serif;
-    margin-top: 0;
-    margin-bottom: 3rem;
     display: block;
-    /* Forces it to its own line */
+    margin-bottom: 2rem;
 }
 
-/* The Body Text */
 .about-hero p {
     font-size: 1.25rem;
     color: var(--navy);
     line-height: 1.8;
     margin-bottom: 2rem;
-    font-family: 'Georgia', serif;
 }
 
-/* The Final Tagline: "Fast. Simple. Essential." */
 .about-hero .tagline {
     font-size: 1.1rem;
     font-family: sans-serif;
     font-weight: 700;
     letter-spacing: 3px;
-    /* Spaced out letters look premium */
     text-transform: uppercase;
     color: var(--navy);
     margin-top: 30px;
     margin-bottom: 50px;
     display: inline-block;
     border-bottom: 2px solid var(--gold);
-    /* Subtle underline */
     padding-bottom: 5px;
 }
 
-/* Styling the video box to look nicer */
+/* Video Styling */
 .video-placeholder {
     width: 100%;
-    max-width: 100%;
     height: 350px;
+    /* Default height */
     background-color: var(--white);
     border: 1px solid rgba(10, 25, 47, 0.1);
-    /* Subtle border */
     border-radius: 12px;
-    /* Soft corners */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    /* Lifts it off the page */
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--navy);
     font-weight: bold;
     margin-top: 40px;
+}
+
+/* 7. RESPONSIVE MEDIA QUERIES (The Fix for Mobile) */
+@media screen and (max-width: 768px) {
+
+    /* Stack the Navigation */
+    nav {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+        width: 95%;
+        /* Make it wider on small screens */
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        /* Allow links to wrap if needed */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav .brand {
+        font-size: 1.5rem;
+        /* Smaller logo on phone */
+    }
+
+    /* Adjust Main Layout */
+    .container,
+    .about-hero {
+        margin-top: 40px;
+        /* Less gap on top */
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    /* Adjust Video */
+    .video-placeholder {
+        height: 200px;
+        /* Smaller video box for phones */
+    }
+
+    /* Adjust text size for readability */
+    .about-hero p {
+        font-size: 1.1rem;
+    }
 }
